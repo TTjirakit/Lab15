@@ -19,16 +19,14 @@ int main(){
 }
 
 //Do not modify source code above this line
-void shuffle(int &a, int &b, int &c, int &d) {
-    int array[4] = {a, b, c, d};
-    for (int i = 3; i > 0; --i) {
+
+void shuffle(int &a,int &b,int &c,int &d){
+	srand(time(0));
+	int *x[4] = {&a, &b, &c, &d};
+	    for(int i = 3; i > 0; i--){
         int j = rand() % (i + 1);
-        int k = array[i];
-        array[i] = array[j];
-        array[j] = k;
+        int y = *x[i];
+        *x[i] = *x[j];
+        *x[j] = y;
     }
-    a = array[0];
-    b = array[1];
-    c = array[2];
-    d = array[3];
 }
